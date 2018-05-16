@@ -4,13 +4,21 @@ An add-on SharePoint PowerShell module that leverages SharePoint PnP PowerShell
 module to recursively download or upload of files and folders to or from
 SharePoint.
 
-## Installation
+## How to Install the module
+
 [SharePointPnP.PowerShell.Commands.Files.Recurse](https://www.powershellgallery.com/packages/SharePointPnP.PowerShell.Commands.Files.Recurse)
 is published in [PowerShell Gallery](https://www.powershellgallery.com) and can
 be installed using PowerShell 5.x or higher using the `Install-Module` cmdlet.
 
 ```powershell
 Install-Module -Name 'SharePointPnP.PowerShell.Commands.Files.Recurse'
+```
+## How to Update the module
+
+To update the module on your current machine with PowerShell 5.x or higher, use the `Update-Module` cmdlet.
+
+```powershell
+Update-Module -Name 'SharePointPnP.PowerShell.Commands.Files.Recurse'
 ```
 
 ## Supported PowerShell Version(s)
