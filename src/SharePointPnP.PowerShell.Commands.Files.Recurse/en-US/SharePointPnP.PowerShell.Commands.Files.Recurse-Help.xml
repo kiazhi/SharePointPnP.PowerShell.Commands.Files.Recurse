@@ -1,0 +1,483 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml" xmlns="http://msh">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Add-PnPFoldersItems</command:name>
+      <command:verb>Add</command:verb>
+      <command:noun>PnPFoldersItems</command:noun>
+      <maml:description>
+        <maml:para>Uploads file in their folder structure</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Uploads file in their folder structure to SharePoint Online.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Add-PnPFoldersItems</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
+          <maml:name>Credential</maml:name>
+          <maml:Description>
+            <maml:para>Specifies the SharePoint credential.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">CredentialPipeBind</command:parameterValue>
+          <dev:type>
+            <maml:name>CredentialPipeBind</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
+          <maml:name>ExcludeFileExtension</maml:name>
+          <maml:Description>
+            <maml:para>Specifies the file extension that will be excluded. (Eg. '.aspx', '.html')</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="path">
+          <maml:name>FolderSiteRelativeUrl</maml:name>
+          <maml:Description>
+            <maml:para>Specifies the folder site relative url that will be included. (Eg. '_catalogs\masterpage\Display Templates')</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="src">
+          <maml:name>Source</maml:name>
+          <maml:Description>
+            <maml:para>Specific the source path of the files that will be uploaded.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="uri">
+          <maml:name>Url</maml:name>
+          <maml:Description>
+            <maml:para>Specifies the SharePoint Online site url.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">Uri</command:parameterValue>
+          <dev:type>
+            <maml:name>Uri</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
+        <maml:name>Credential</maml:name>
+        <maml:Description>
+          <maml:para>Specifies the SharePoint credential.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">CredentialPipeBind</command:parameterValue>
+        <dev:type>
+          <maml:name>CredentialPipeBind</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
+        <maml:name>ExcludeFileExtension</maml:name>
+        <maml:Description>
+          <maml:para>Specifies the file extension that will be excluded. (Eg. '.aspx', '.html')</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="path">
+        <maml:name>FolderSiteRelativeUrl</maml:name>
+        <maml:Description>
+          <maml:para>Specifies the folder site relative url that will be included. (Eg. '_catalogs\masterpage\Display Templates')</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="src">
+        <maml:name>Source</maml:name>
+        <maml:Description>
+          <maml:para>Specific the source path of the files that will be uploaded.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="uri">
+        <maml:name>Url</maml:name>
+        <maml:Description>
+          <maml:para>Specifies the SharePoint Online site url.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">Uri</command:parameterValue>
+        <dev:type>
+          <maml:name>Uri</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.Uri</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String[]</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>SharePointPnP.PowerShell.Commands.Base.PipeBinds.CredentialPipeBind</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>The `Add-PnPFoldersItems` cmdlet from `SharePointPnP.PowerShell.Commands.Files.Recurse` SharePointPnP Add-on module that utilises the `Add-PnPFile` cmdlet from `SharePointPnPPowerShellOnline` module.</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; Add-PnPFolderItemContent `
+    -Url 'https://amce.sharepoint.com/sites/powershellcommunity' `
+    -FolderSiteRelativeUrl 'Shared Documents' `
+    -Source 'C:\Temp' `
+    -ExcludeFileExtension '.txt', '.xlsx' `
+    -Credential (New-Object -TypeName System.Management.Automation.PSCredential `
+        -ArgumentList (Read-Host -Prompt 'Input your Username'), `
+        (ConvertTo-SecureString `
+            -String (Read-Host -Prompt 'Input your Password') `
+            -AsPlainText `
+            -Force)) ;</dev:code>
+        <dev:remarks>
+          <maml:para>This command connects to "https://amce.sharepoint.com", filter to FolderSiteRelativeUrl "Shared Documents" path location, exclude files with the following file extensions ['.txt', '.xlsx'] in the source path location and uploads the rest of the files in that source path location to SharePoint Online location with the credential provided.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>SharePoint PnP PowerShell Cmdlets</maml:linkText>
+        <maml:uri>https://github.com/SharePoint/PnP-PowerShell</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>SharePoint Developer Community (SharePoint PnP)</maml:linkText>
+        <maml:uri>https://docs.microsoft.com/en-us/sharepoint/dev/community/community</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-PnPFoldersItems</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>PnPFoldersItems</command:noun>
+      <maml:description>
+        <maml:para>Get the folder structure and files</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>Get the folder structure and files from SharePoint Online. Create the folder structure and download those files when destination parameter is specified with a local file system path.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-PnPFoldersItems</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
+          <maml:name>Credential</maml:name>
+          <maml:Description>
+            <maml:para>Specifies the SharePoint credential.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">CredentialPipeBind</command:parameterValue>
+          <dev:type>
+            <maml:name>CredentialPipeBind</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="dest">
+          <maml:name>Destination</maml:name>
+          <maml:Description>
+            <maml:para>Specific the destination path for the downloaded files.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
+          <maml:name>ExcludeFileExtension</maml:name>
+          <maml:Description>
+            <maml:para>Specifies the file extension that will be excluded. (Eg. '.aspx', '.html')</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
+          <maml:name>ExcludeFolderSiteRelativeUrl</maml:name>
+          <maml:Description>
+            <maml:para>Specifies the folder site relative url that will be excluded. (Eg. 'Forms', 'Forms\Html')</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+          <dev:type>
+            <maml:name>String[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="path">
+          <maml:name>FolderSiteRelativeUrl</maml:name>
+          <maml:Description>
+            <maml:para>Specifies the folder site relative url that will be included. (Eg. '_catalogs\masterpage\Display Templates')</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="uri">
+          <maml:name>Url</maml:name>
+          <maml:Description>
+            <maml:para>Specifies the SharePoint Online site url.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">Uri</command:parameterValue>
+          <dev:type>
+            <maml:name>Uri</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
+        <maml:name>Credential</maml:name>
+        <maml:Description>
+          <maml:para>Specifies the SharePoint credential.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">CredentialPipeBind</command:parameterValue>
+        <dev:type>
+          <maml:name>CredentialPipeBind</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="dest">
+        <maml:name>Destination</maml:name>
+        <maml:Description>
+          <maml:para>Specific the destination path for the downloaded files.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
+        <maml:name>ExcludeFileExtension</maml:name>
+        <maml:Description>
+          <maml:para>Specifies the file extension that will be excluded. (Eg. '.aspx', '.html')</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="none">
+        <maml:name>ExcludeFolderSiteRelativeUrl</maml:name>
+        <maml:Description>
+          <maml:para>Specifies the folder site relative url that will be excluded. (Eg. 'Forms', 'Forms\Html')</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="path">
+        <maml:name>FolderSiteRelativeUrl</maml:name>
+        <maml:Description>
+          <maml:para>Specifies the folder site relative url that will be included. (Eg. '_catalogs\masterpage\Display Templates')</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName, ByValue)" position="named" aliases="uri">
+        <maml:name>Url</maml:name>
+        <maml:Description>
+          <maml:para>Specifies the SharePoint Online site url.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">Uri</command:parameterValue>
+        <dev:type>
+          <maml:name>Uri</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.Uri</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String[]</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+      <command:inputType>
+        <dev:type>
+          <maml:name>SharePointPnP.PowerShell.Commands.Base.PipeBinds.CredentialPipeBind</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>The `Get-PnPFoldersItems` cmdlet from `SharePointPnP.PowerShell.Commands.Files.Recurse` SharePointPnP Add-on module that utilises the `Get-PnPFile` cmdlet from `SharePointPnPPowerShellOnline` module.</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; Connect-PnPOnline `
+    -Url https://amce.sharepoint.com/ `
+    -Credentials (New-Object -TypeName System.Management.Automation.PSCredential `
+        -ArgumentList (Read-Host -Prompt 'Input your Username'), `
+        (ConvertTo-SecureString `
+            -String (Read-Host -Prompt 'Input your Password') `
+            -AsPlainText `
+            -Force)) ;
+
+PS C:\&gt; Get-PnPFolderItemContent `
+    -FolderSiteRelativeUrl '_catalogs/masterpage' `
+    -ExcludeFileExtension '.aspx', '.txt' `
+    -ExcludeFolderSiteRelativeUrl '_catalogs/masterpage/Display Templates/Filters', '_catalogs/masterpage/Display Templates/System' ;</dev:code>
+        <dev:remarks>
+          <maml:para>This command uses the existing "https://amce.sharepoint.com" connection, filter to get a list of items in FolderSiteRelativeUrl "_catalogs\masterpage", exclude files with the following file extensions ['.aspx', '.txt'], exclude any other folders and files in following relative url ['_catalogs/masterpage/Display Templates/Filters', '_catalogs/masterpage/Display Templates/System'] and list those files in their respective folder path.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
+        <dev:code>PS C:\&gt; Get-PnPFolderItemContent `
+    -Url https://amce.sharepoint.com/ `
+    -FolderSiteRelativeUrl '_catalogs/masterpage' `
+    -ExcludeFileExtension '.aspx', '.txt' `
+    -ExcludeFolderSiteRelativeUrl '_catalogs/masterpage/Display Templates/Filters', '_catalogs/masterpage/Display Templates/System' `
+    -Destination 'C:\Temp' `
+    -Credential (New-Object -TypeName System.Management.Automation.PSCredential `
+        -ArgumentList (Read-Host -Prompt 'Input your Username'), `
+        (ConvertTo-SecureString `
+            -String (Read-Host -Prompt 'Input your Password') `
+            -AsPlainText `
+            -Force)) ;</dev:code>
+        <dev:remarks>
+          <maml:para>This command connects to "https://amce.sharepoint.com", filter to get a list of items in FolderSiteRelativeUrl "_catalogs\masterpage", exclude files with the following file extensions ['.aspx', '.txt'], exclude any other folders and files in following relative url ['_catalogs/masterpage/Display Templates/Filters', '_catalogs/masterpage/Display Templates/System'] and download those files in their respective folder structure with the credential provided.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>SharePoint PnP PowerShell Cmdlets</maml:linkText>
+        <maml:uri>https://github.com/SharePoint/PnP-PowerShell</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>SharePoint Developer Community (SharePoint PnP)</maml:linkText>
+        <maml:uri>https://docs.microsoft.com/en-us/sharepoint/dev/community/community</maml:uri>
+      </maml:navigationLink>
+    </command:relatedLinks>
+  </command:command>
+</helpItems>
