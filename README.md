@@ -36,7 +36,7 @@ Update-Module -Name 'SharePointPnP.PowerShell.Commands.Files.Recurse'
 
 Utilises open-source [SharePointPnP.PowerShell](https://github.com/SharePoint/PnP-PowerShell)
 Module from [GitHub](http://github.com):
-- [SharePointPnPPowerShellOnline](https://github.com/SharePoint/PnP-PowerShell/releases)
+- [SharePointPnPPowerShell- Online or 2013 or 2016](https://github.com/SharePoint/PnP-PowerShell/releases)
     [ [2.26.1805.0](https://github.com/SharePoint/PnP-PowerShell/releases/tag/2.26.1805.0) ]
 
 ## Documentation

@@ -24,7 +24,7 @@ Uploads file in their folder structure to SharePoint Online.
 
 ### Example 1
 ```powershell
-PS C:\> Add-PnPFolderItemContent `
+PS C:\> Add-PnPFoldersItems `
     -Url 'https://amce.sharepoint.com/sites/powershellcommunity' `
     -FolderSiteRelativeUrl 'Shared Documents' `
     -Source 'C:\Temp' `
