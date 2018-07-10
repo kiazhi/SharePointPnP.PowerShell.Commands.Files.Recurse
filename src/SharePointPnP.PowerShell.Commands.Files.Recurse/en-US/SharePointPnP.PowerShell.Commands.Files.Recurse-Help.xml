@@ -191,7 +191,7 @@
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; Add-PnPFolderItemContent `
+        <dev:code>PS C:\&gt; Add-PnPFoldersItems `
     -Url 'https://amce.sharepoint.com/sites/powershellcommunity' `
     -FolderSiteRelativeUrl 'Shared Documents' `
     -Source 'C:\Temp' `
@@ -442,7 +442,7 @@
             -AsPlainText `
             -Force)) ;
 
-PS C:\&gt; Get-PnPFolderItemContent `
+PS C:\&gt; Get-PnPFoldersItems `
     -FolderSiteRelativeUrl '_catalogs/masterpage' `
     -ExcludeFileExtension '.aspx', '.txt' `
     -ExcludeFolderSiteRelativeUrl '_catalogs/masterpage/Display Templates/Filters', '_catalogs/masterpage/Display Templates/System' ;</dev:code>
@@ -452,7 +452,7 @@ PS C:\&gt; Get-PnPFolderItemContent `
       </command:example>
       <command:example>
         <maml:title>-------------------------- Example 2 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; Get-PnPFolderItemContent `
+        <dev:code>PS C:\&gt; Get-PnPFoldersItems `
     -Url https://amce.sharepoint.com/ `
     -FolderSiteRelativeUrl '_catalogs/masterpage' `
     -ExcludeFileExtension '.aspx', '.txt' `

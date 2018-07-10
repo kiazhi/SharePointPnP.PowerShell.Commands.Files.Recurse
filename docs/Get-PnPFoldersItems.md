@@ -35,7 +35,7 @@ PS C:\> Connect-PnPOnline `
             -AsPlainText `
             -Force)) ;
 
-PS C:\> Get-PnPFolderItemContent `
+PS C:\> Get-PnPFoldersItems `
     -FolderSiteRelativeUrl '_catalogs/masterpage' `
     -ExcludeFileExtension '.aspx', '.txt' `
     -ExcludeFolderSiteRelativeUrl '_catalogs/masterpage/Display Templates/Filters', '_catalogs/masterpage/Display Templates/System' ;
@@ -45,7 +45,7 @@ This command uses the existing "https://amce.sharepoint.com" connection, filter 
 
 ### Example 2
 ```
-PS C:\> Get-PnPFolderItemContent `
+PS C:\> Get-PnPFoldersItems `
     -Url https://amce.sharepoint.com/ `
     -FolderSiteRelativeUrl '_catalogs/masterpage' `
     -ExcludeFileExtension '.aspx', '.txt' `

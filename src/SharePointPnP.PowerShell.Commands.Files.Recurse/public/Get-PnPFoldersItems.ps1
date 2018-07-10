@@ -56,35 +56,27 @@ function Get-PnPFoldersItems
 
         if(!(Get-Module `
             -Name 'SharePointPnPPowerShellOnline' `
-            -ListAvailable))
+            -ListAvailable) -and !(Get-Module -Name SharePointPnPPowerShell2013 -ListAvailable) -and !(Get-Module -Name SharePointPnPPowerShell2016 -ListAvailable))
         {
             Write-Warning `
                 -Message `
                     ([String]::Format('"{0}" {1} "{2}" {3}',
-                        'Get-PnPFolderItemContent',
+                        'Get-PnPFoldersItems',
                         'cmdlet requires',
-                        'SharePointPnPPowerShellOnline',
+                        'SharePointPnPPowerShellOnline or SharePointPnPPowerShell2013 or SharePointPnPPowerShell2016',
                         'SharePoint Online PowerShell Module to be installed.')) ;
 
             Write-Warning `
                 -Message `
                     ([String]::Format('{0} "{1}" {2}: {3}',
                         'Please kindly install the',
-                        'SharePointPnPPowerShellOnline',
-                        'SharePoint Online PowerShell Module using the following command',
-                        'Install-Module -Name SharePointPnPPowerShellOnline')) ;
+                        'SharePointPnPPowerShellOnline or SharePointPnPPowerShell2013 or SharePointPnPPowerShell2016',
+                        'SharePoint PowerShell Module using the following command',
+                        'Install-Module -Name SharePointPnPPowerShellVERSION')) ;
 
             Break ;
         }
-        else
-        {
-            if(!(Get-Module `
-                -Name 'SharePointPnPPowerShellOnline'))
-            {
-                Import-Module `
-                    -Name 'SharePointPnPPowerShellOnline' ;
-            }
-        }
+        #rely on auto load module instead of importing explicitly
 
         if($Credential -ne (Out-Null))
         {
@@ -140,11 +132,11 @@ function Get-PnPFoldersItems
 
                 # If this is a directory, recurse into this function.
                 # Otherwise, write the item out to the pipeline.
-                if ($Item -is [Microsoft.SharePoint.Client.Folder])
+                if ($Item.GetType().Name -eq 'Folder')
                 {
                     if($PSCmdlet.MyInvocation.BoundParameters.ContainsKey("Destination"))
                     {
-                        Get-PnPFolderItemContent `
+                        Get-PnPFoldersItems `
                             -FolderSiteRelativeUrl $ItemPath `
                             -Destination $Destination `
                             -ExcludeFileExtension $ExcludeFileExtension `
@@ -152,7 +144,7 @@ function Get-PnPFoldersItems
                     }
                     else
                     {
-                        Get-PnPFolderItemContent `
+                        Get-PnPFoldersItems `
                             -FolderSiteRelativeUrl $ItemPath `
                             -ExcludeFileExtension $ExcludeFileExtension `
                             -ExcludeFolderSiteRelativeUrl $ExcludeFolderSiteRelativeUrl ;
