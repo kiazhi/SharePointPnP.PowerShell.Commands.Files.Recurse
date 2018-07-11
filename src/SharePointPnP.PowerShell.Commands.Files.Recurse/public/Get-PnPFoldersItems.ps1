@@ -55,8 +55,16 @@ function Get-PnPFoldersItems
         $ProgressCounter = 0
 
         if(!(Get-Module `
-            -Name 'SharePointPnPPowerShellOnline' `
-            -ListAvailable) -and !(Get-Module -Name SharePointPnPPowerShell2013 -ListAvailable) -and !(Get-Module -Name SharePointPnPPowerShell2016 -ListAvailable))
+                -Name 'SharePointPnPPowerShellOnline' `
+                -ListAvailable) `
+            -and `
+            !(Get-Module `
+                -Name 'SharePointPnPPowerShell2013' `
+                -ListAvailable) `
+            -and `
+            !(Get-Module `
+                -Name 'SharePointPnPPowerShell2016' `
+                -ListAvailable))
         {
             Write-Warning `
                 -Message `
@@ -268,8 +276,8 @@ function Get-PnPFoldersItems
 # SIG # Begin signature block
 # MIIQ/wYJKoZIhvcNAQcCoIIQ8DCCEOwCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUKzEgoYrZuTB1kMNWP9kCwHM1
-# djWgggyRMIID7jCCA1egAwIBAgIQfpPr+3zGTlnqS5p31Ab8OzANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUqqr+DvGWyxRi8GrCBv4cJdb9
+# 22SgggyRMIID7jCCA1egAwIBAgIQfpPr+3zGTlnqS5p31Ab8OzANBgkqhkiG9w0B
 # AQUFADCBizELMAkGA1UEBhMCWkExFTATBgNVBAgTDFdlc3Rlcm4gQ2FwZTEUMBIG
 # A1UEBxMLRHVyYmFudmlsbGUxDzANBgNVBAoTBlRoYXd0ZTEdMBsGA1UECxMUVGhh
 # d3RlIENlcnRpZmljYXRpb24xHzAdBgNVBAMTFlRoYXd0ZSBUaW1lc3RhbXBpbmcg
@@ -339,22 +347,22 @@ function Get-PnPFoldersItems
 # 4MO8HNgEdTGCA9gwggPUAgEBMDAwHDEaMBgGA1UEAwwRUnllbi5LaWEuWmhpLlRh
 # bmcCEH9rl8h3Ot6tQRCZXpqP/00wCQYFKw4DAhoFAKBwMBAGCisGAQQBgjcCAQwx
 # AjAAMBkGCSqGSIb3DQEJAzEMBgorBgEEAYI3AgEEMBwGCisGAQQBgjcCAQsxDjAM
-# BgorBgEEAYI3AgEVMCMGCSqGSIb3DQEJBDEWBBR4+LMwGcdudDm/xQOx8JQRIxQX
-# 2DANBgkqhkiG9w0BAQEFAASCAQDeq6Z9ZMfWYiUCRxOOQZnbBynUSVLm5+AGt1G7
-# 9yQKBJ+myUVQveyi9efom8RNfE92ckRclrwsWRpv/u6BZAjiJMUPqEsxxdvl2Fim
-# n/zTU0bmB/U4yk8j3t+/dcUTKM0p/TNO3+SZlNscd4vF6EF/D1FiUcd+6pWsZ/K8
-# fXhfHEaGHis+KxZ167Z2cgmUS+NvIeKQoMbLQShj3PWVfcJv+ZVoWqMy2yWRP8HW
-# 0TzLXCxG/cUsw+lJO2HsRXvHphdMGrf2lcEeOygNdw1bOZePexJzz86+1rKPzm2r
-# 1GhXNSElu1ljc1hbYMXXhoXVvuYYOvmgYVSeAmKftNTIsdPUoYICCzCCAgcGCSqG
+# BgorBgEEAYI3AgEVMCMGCSqGSIb3DQEJBDEWBBTj3zkxxggwscroc5xtMppERh6e
+# uTANBgkqhkiG9w0BAQEFAASCAQCYgjoFfu538vNWyVf7DmiNJdZm2iGWeVi84Ex8
+# SB0Ia2V2B/VJCOinHiqHFw0GDhq64P3WQwDQVHtX4B2cBiMbHrWFUemuOEeGPPWa
+# uL8DvUUNDzEOnKY8GiAssKSEdhUtwfGhsSZYcqlb93fsfU87coKwxIyys2TkcuqW
+# 1bwSJqpTdsCqnlLgXwVMzT739dJ6tEMDDkI2ILUxvK4oWSworFR4Nt437Z/ZOjCQ
+# yIt0Jzyibzcz815td3OK+QoGP4PFucrD6lK0xY4oamW6+Ib0tABMMj8ompf2EzeM
+# kPW3xcY9onNu8x11uWpmcQGAUeQMTxFFdm8jqzcrX5oxY2uEoYICCzCCAgcGCSqG
 # SIb3DQEJBjGCAfgwggH0AgEBMHIwXjELMAkGA1UEBhMCVVMxHTAbBgNVBAoTFFN5
 # bWFudGVjIENvcnBvcmF0aW9uMTAwLgYDVQQDEydTeW1hbnRlYyBUaW1lIFN0YW1w
 # aW5nIFNlcnZpY2VzIENBIC0gRzICEA7P9DjI/r81bgTYapgbGlAwCQYFKw4DAhoF
 # AKBdMBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTE4
-# MDUxNjAwMzU0N1owIwYJKoZIhvcNAQkEMRYEFHtaLe8GC8IwgcOlUB5wDh95UbOb
-# MA0GCSqGSIb3DQEBAQUABIIBABidLJQTkXDedg8ugb40Rs77UrZANNkbKU/hfNpZ
-# 8lMbYm83vS2UXJcDR76bPSX6bF6Zp6vFx51U4HYvibeDXl28nHMd4AGHN2cp7Orw
-# mAlCv3ZLK+czeHOKwpIj/FCy5U4vtrh9g+PPoyOzE+ZablqQyw0vbtRcB5VarKEv
-# LkZlRaB/VZQNAvBo3Ccg0f9RpSZEzRbd2glLn1HVI8Y49wW0bJO6AytH2TbPZw7c
-# eyLypuQBh3Uy4PGtXCTMuTAJPcytyscc5DLhuPp+WKbh2NCrFYlsPkac2rK0Ymy0
-# 6vjxkWjiVh3/4B9OVOmXrsFhzz0kqgfG0DG999FPSEvyf2M=
+# MDcxMTAwMjAwNVowIwYJKoZIhvcNAQkEMRYEFAcAEJNS+fhsMIM43W7oDhaENkiN
+# MA0GCSqGSIb3DQEBAQUABIIBAD/UwtpSmeVXtyBwc8HiAgxuofbz+ikzZCydIVQd
+# a+UnNFFi5ODOCD1MPAin9xBVxD57SZmxneN5gAgleG9bH7Ez2ErzRdi0fAQ2NC9u
+# hbiS4iQvxMPx4IISmZ17iQHx6L7fQloBZGcKNtU08ttRuYo3BHb3Z9i5zLC5sOZJ
+# ShzYfz4TWe4wOEEk9m4rycq7YtBfpS0f1/Hpbm9x/9yg2QAA7vLnLqd5g6eTm1kj
+# pv+S83hJE7OZrQ1rbw9lWZ0DeEjuMIpFhoWhueav9Q1w7GeKJtEWWyjGGpobLQWp
+# CyKoDzs/x1CTN9Ue/um/jrVL0ud+iYSy7mUBQqdmy/R9zs4=
 # SIG # End signature block

@@ -2,7 +2,7 @@
  # Created by Ryen Kia Zhi Tang
  #>
 
- function Add-PnPFoldersItems
+function Add-PnPFoldersItems
 {
     [CmdletBinding()]
 
@@ -50,7 +50,15 @@
 
         if(!(Get-Module `
             -Name 'SharePointPnPPowerShellOnline' `
-            -ListAvailable) -and !(Get-Module -Name SharePointPnPPowerShell2013 -ListAvailable) -and !(Get-Module -Name SharePointPnPPowerShell2016 -ListAvailable))
+            -ListAvailable) `
+            -and `
+            !(Get-Module `
+                -Name 'SharePointPnPPowerShell2013' `
+                -ListAvailable) `
+            -and `
+            !(Get-Module `
+                -Name 'SharePointPnPPowerShell2016' `
+                -ListAvailable))
         {
             Write-Warning `
                 -Message `
@@ -235,11 +243,12 @@
     {
     }
 }
+
 # SIG # Begin signature block
 # MIIQ/wYJKoZIhvcNAQcCoIIQ8DCCEOwCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUrEn+K8OMyNi/8U1OHm/zsmGs
-# HjegggyRMIID7jCCA1egAwIBAgIQfpPr+3zGTlnqS5p31Ab8OzANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUNOzul4aLkYo+UZCeS7ks5dyZ
+# K86gggyRMIID7jCCA1egAwIBAgIQfpPr+3zGTlnqS5p31Ab8OzANBgkqhkiG9w0B
 # AQUFADCBizELMAkGA1UEBhMCWkExFTATBgNVBAgTDFdlc3Rlcm4gQ2FwZTEUMBIG
 # A1UEBxMLRHVyYmFudmlsbGUxDzANBgNVBAoTBlRoYXd0ZTEdMBsGA1UECxMUVGhh
 # d3RlIENlcnRpZmljYXRpb24xHzAdBgNVBAMTFlRoYXd0ZSBUaW1lc3RhbXBpbmcg
@@ -309,22 +318,22 @@
 # 4MO8HNgEdTGCA9gwggPUAgEBMDAwHDEaMBgGA1UEAwwRUnllbi5LaWEuWmhpLlRh
 # bmcCEH9rl8h3Ot6tQRCZXpqP/00wCQYFKw4DAhoFAKBwMBAGCisGAQQBgjcCAQwx
 # AjAAMBkGCSqGSIb3DQEJAzEMBgorBgEEAYI3AgEEMBwGCisGAQQBgjcCAQsxDjAM
-# BgorBgEEAYI3AgEVMCMGCSqGSIb3DQEJBDEWBBQJSHvu/eoKV4kvRUi44tJSFy5O
-# wDANBgkqhkiG9w0BAQEFAASCAQDZ8bo65acfIlSGpDkmJHthWr+caT1BYBNHrizG
-# pFesUYNnAG9ZUHWGaRqG8TdNZRpE6MqGEG8HQrPq0o6wYuV7uN4LjFStBftsY3Bc
-# 0jY7oPkkdkBenzY5eQ7uIw4GnESrfLSQqjOvi9MceYYuKd1G2DTuvft6bFwHII0t
-# XrtddADAXWGXUvY5gnJuxDVtau6+9Se3q8E2BqaTGjztZATdabdWLrXB45/F1HEL
-# jvv9B8tGRpPI1Ro5J1v8HRKSWtoZhr9fBtUt84r7E40NPoPSiEqKF3oiPQVV7azk
-# rOv0lcSNQOgYXCqWaf02ppKoUVoowOLIkAgJNU7Ti1fGHB4loYICCzCCAgcGCSqG
+# BgorBgEEAYI3AgEVMCMGCSqGSIb3DQEJBDEWBBSPcvjV8q3J+vNKH0QqOn4Xnfzd
+# hDANBgkqhkiG9w0BAQEFAASCAQCeEClD2sI7jOnuTP26fiupYdkBTiChHR8+9KQ4
+# GfvJFDZdN/H8XuA7FvmkuaUSqF5JG4TcEK05ZEJpkdvdAYrQp7HDBTR4MojdJLiI
+# bwkstQ2SKi/KxEx1YOPMgZFhgxbXREdrmjtgIgu2GT29oXiyBN+SZLja7D6Tfqbn
+# q60cxZaJDxZAYBVJ+k+/QwMF1fyxoM6phWGMPVAQwyBFSdANT2uMCbdXHumvUvLb
+# iYv7tsg90nF+PPFAP/RPONCTsS0xpZBGM2SyN6VUvA4C7cUQ/oBB2pk+7E9nb+0h
+# bwxii6uIVMayNVPQe4++HJDOQVbz9vWILQIxNF/fpjj/s4tDoYICCzCCAgcGCSqG
 # SIb3DQEJBjGCAfgwggH0AgEBMHIwXjELMAkGA1UEBhMCVVMxHTAbBgNVBAoTFFN5
 # bWFudGVjIENvcnBvcmF0aW9uMTAwLgYDVQQDEydTeW1hbnRlYyBUaW1lIFN0YW1w
 # aW5nIFNlcnZpY2VzIENBIC0gRzICEA7P9DjI/r81bgTYapgbGlAwCQYFKw4DAhoF
 # AKBdMBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTE4
-# MDUxNjAwMzUyNVowIwYJKoZIhvcNAQkEMRYEFP6f4O4DBnRhkj+LFf4yefRzNsdU
-# MA0GCSqGSIb3DQEBAQUABIIBAEl62X4fWSO++jlbmq5RYZYz37XxsiVUKxGB1N+g
-# Nx4vCNzUaN3/BzXDuM/A2AJ9JWL7wJtXMZMXV7U1AJuuAjuxp1IhJrHebjMu13dp
-# 4GR/uSHO8LkcuIEBqS4Uq8rrskucB/qQcEQn64nAhOjYWHeYFWC5fCwtfdsHAcc8
-# eeLbSLyUKwjFIL9TetblhWmwUgpbJDQte3vT40Y8CTGg1osTPZ6afDcXIBVIeULw
-# eGq0m/zrdauC9XKFVC6H1WRc4/XQp4nRQU3yxeev/5bFHqY+yRaBjwxu3Sf+PxHG
-# oP1bL8TkfpUB2c6dXBJyDjKE+5yLCUsSrcytLZq78Pi4gH8=
+# MDcxMTAwMjAzMFowIwYJKoZIhvcNAQkEMRYEFCWAulMV5pjb8u4Q9rtVeETih6cW
+# MA0GCSqGSIb3DQEBAQUABIIBAJ2aBaP6Nx9IYwH3n7bm83wFqII1CPBwpimvrO10
+# 7Ok2JkJdsRt6FDJGa8yiXAijIc+pDuSQJhSHdCJf98/FNaNSm2hLjT1CAL9HhlH3
+# X7U4O7th6kWdzn4LZIzm3tBL1ZPyQDV0jvaTS5A7YvSNTrcQz+6whHrsjDbR0zn6
+# kJ80kQV293HJw2jGT754Rinhr8Rf70jpdZXhbpYYdRMLu/KCgCwP1mRHK1RQXUzU
+# oVcX960st2Qpo5CSQ5fAH4W0pWeoSjBvkVABqfQxIc5WE0ce/vGkqp9oSV1YhKki
+# IoYGhDzKSQIc/Zjnnx8dbND5L+o6OJdDQ9iqDx4m9Yjs0SM=
 # SIG # End signature block
