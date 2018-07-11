@@ -178,3 +178,4 @@ The `Get-PnPFoldersItems` cmdlet from `SharePointPnP.PowerShell.Commands.Files.R
 ## RELATED LINKS
 [SharePoint PnP PowerShell Cmdlets](https://github.com/SharePoint/PnP-PowerShell)
 [SharePoint Developer Community (SharePoint PnP)](https://docs.microsoft.com/en-us/sharepoint/dev/community/community)
+[SharePointPnP.PowerShell.Commands.Files.Recurse](https://github.com/kiazhi/SharePointPnP.PowerShell.Commands.Files.Recurse)

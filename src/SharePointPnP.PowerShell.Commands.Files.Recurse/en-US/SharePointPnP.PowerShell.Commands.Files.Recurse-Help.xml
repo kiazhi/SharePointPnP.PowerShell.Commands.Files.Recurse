@@ -216,6 +216,10 @@
         <maml:linkText>SharePoint Developer Community (SharePoint PnP)</maml:linkText>
         <maml:uri>https://docs.microsoft.com/en-us/sharepoint/dev/community/community</maml:uri>
       </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>SharePointPnP.PowerShell.Commands.Files.Recurse</maml:linkText>
+        <maml:uri>https://github.com/kiazhi/SharePointPnP.PowerShell.Commands.Files.Recurse</maml:uri>
+      </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
@@ -477,6 +481,10 @@ PS C:\&gt; Get-PnPFoldersItems `
       <maml:navigationLink>
         <maml:linkText>SharePoint Developer Community (SharePoint PnP)</maml:linkText>
         <maml:uri>https://docs.microsoft.com/en-us/sharepoint/dev/community/community</maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>SharePointPnP.PowerShell.Commands.Files.Recurse</maml:linkText>
+        <maml:uri>https://github.com/kiazhi/SharePointPnP.PowerShell.Commands.Files.Recurse</maml:uri>
       </maml:navigationLink>
     </command:relatedLinks>
   </command:command>
